@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="nickname-modal" id="nickname-modal">
+            <div class="nickname-box">
+                <h2>Enter Your Nickname</h2>
+                <input type="text" id="nickname-input" placeholder="e.g. ChatMaster123">
+                <button id="nickname-submit">Join Chat</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <header>
+                <h1>Group Chat</h1>
+                <div id="online-count">0 online</div>
+            </header>
+            
+            <div class="chat-container">
+                <div class="sidebar">
+                    <div class="user-list-header">
+                        <h3>Online Users</h3>
+                    </div>
+                    <div class="user-list" id="user-list"></div>
+                </div>
+                
+                <div class="chat-main">
+                    <div class="messages" id="messages"></div>
+                    <div class="input-area">
+                        <input type="text" id="message-input" placeholder="Type your message..." disabled>
+                        <button id="send-button" disabled>
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
